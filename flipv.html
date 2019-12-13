@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <HTML>
     <HEAD>
+      <style>
+        .vertical_flip {
+         height:100px;  position:relative;
+         top : -150px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform-origin: 100% 125px;
+        -webkit-transition: all 0.7s ease;
+        transform-style: preserve-3d;
+        transform-origin: 100% 125px;
+        transition: all 0.7s ease;
+                 -webkit-transform: rotateX(-180deg);
+                 transform: rotateX(-180deg);
+        }
+        .horizontal_flip
+        {
+         height:100px; position:relative;
+        -webkit-transform-style: preserve-3d;
+        left:-150px;
+        -webkit-transform-origin: 100% 125px;
+        -webkit-transition: all 0.7s ease;
+        transform-style: preserve-3d;
+        transform-origin: 100% 125px;
+        transition: all 0.7s ease;
+                 -webkit-transform: rotateY(-180deg);
+                 transform: rotateY(-180deg);
+
+        }
+        .light{
+          filter:brightness(2);
+        }
+      </style>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
       <TITLE>Применение фильтров flip, light() и invert()</TITLE>
@@ -13,13 +44,11 @@
     <BODY onLoad="tstFilter1()">
       <H3>Эффект применения transform: scaleX и scaleY.</H3>
       (фильтры fliphH и flipV поддерживаются только в IE 8)<br>
-      <IMG ID=ImageLogo SRC="./image1/4.jpg" height="100" width="50">
-      <!-- <IMG ID=ImageLogo SRC="pelengas_small.jpg" style="transform: scaleX(-1);" height="100" width="50"> -->
-      <IMG ID=ImageLogo SRC="./image1/4.jpg" style="filter: flipH();" height="100" width="50">
-      <!-- <IMG ID=ImageLogo SRC="pelengas_small.jpg" style="transform: scaleY(-1);" height="100" width="50"> -->
-      <IMG ID=ImageLogo SRC="./image1/4.jpg" style="filter: flipV();" height="100" width="50">
+      <IMG ID=ImageLogo SRC="./image1/fish.png" height="100" >
+      <IMG ID=ImageLogo SRC="./image1/fish.png" class = "vertical_flip" height="100" >
+      <IMG ID=ImageLogo SRC="./image1/fish.png" class = "horizontal_flip" height="100" >
       <H3>Применение фильтров light() и invert().</H3>
-      <IMG ID=ImageLogo1 SRC="./image1/4.jpg" style="filter:light();" height="100" width="50">
-      <IMG SRC="./image1/4.jpg" style="filter:invert();" height="100" width="50">
+      <IMG ID=ImageLogo1 SRC="./image1/fish.png" class="light" height="100">
+      <IMG SRC="./image1/fish.png" style="filter:invert();" height="100" >
     </BODY>
  </HTML>
